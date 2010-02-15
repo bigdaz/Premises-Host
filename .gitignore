@@ -1,4 +1,5 @@
 /webapps/*
+!/webapps/keep.txt
 /logs/*
-!/logs/README.txt
+!/logs/keep.txt
 /war/*
