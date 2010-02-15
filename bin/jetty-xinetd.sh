@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 
 # look for JETTY_HOME
