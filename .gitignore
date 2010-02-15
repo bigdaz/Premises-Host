@@ -1,3 +1,4 @@
 /webapps/*
 /logs/*
+!/logs/README.txt
 /war/*
