@@ -1,5 +1,0 @@
-/webapps/*
-!/webapps/keep.txt
-/logs/*
-!/logs/keep.txt
-/war/*
