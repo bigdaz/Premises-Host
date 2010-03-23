@@ -1,5 +1,6 @@
-/webapps/*
-!/webapps/keep.txt
-/logs/*
-!/logs/keep.txt
-/war/*
+/webserver/webapps/*
+!/webserver/webapps/keep.txt
+/webserver/logs/*
+!/webserver/logs/keep.txt
+/webserver/war/*
+/deployment/versions/*
