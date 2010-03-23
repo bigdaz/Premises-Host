@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='bm'>
+  <inherits name='com.google.gwt.user.User'/>
+  <inherits name="ca.nanometrics.gflot.GFlot"/>
+  <inherits name="com.bigdaz.gwtchart.GwtChart"/>
+  <inherits name="com.google.gwt.inject.Inject"/>
+  <inherits name="org.adamtacy.GWTEffects"/>
+
+  <entry-point class='greensync.client.bm.Loader'/>
+
+  <source path='client'/>
+  <source path='shared'/>
+
+  <set-configuration-property name="CssResource.style" value="pretty"/>
+</module>

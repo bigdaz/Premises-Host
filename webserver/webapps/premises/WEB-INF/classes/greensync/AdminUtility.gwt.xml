@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='admin'>
+  <inherits name='com.google.gwt.user.User'/>
+
+  <inherits name="com.google.gwt.inject.Inject"/>
+
+  <inherits name='com.google.gwt.user.theme.standard.Standard'/>  
+
+  <entry-point class='greensync.client.admin.Loader'/>
+
+  <source path='client/admin'/>
+  <source path='client/service'/>
+  <source path='shared'/>
+
+  <set-configuration-property name="CssResource.style" value="pretty"/>
+</module>

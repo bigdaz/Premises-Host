@@ -1,0 +1,42 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui"
+             xmlns:widget="urn:import:greensync.client.bm.widget"
+             xmlns:panel="urn:import:greensync.client.bm.panel">
+  <ui:style>
+    .title {
+      font-size: 180%;
+      padding-left: 1em;
+    }
+  </ui:style>
+  <g:LayoutPanel>
+    <g:layer top="1em" height="3em">
+      <g:HTMLPanel styleName="{style.title}">
+        <h3><span>Water Usage </span><span class="label" ui:field="premisesName"/></h3>
+      </g:HTMLPanel>
+    </g:layer>
+    <g:layer top="5em" height="10em" left="2em" width="20em">
+      <widget:UsagePanel icon="images/console/i-cost.png">
+        <h3>Per day Usage</h3>
+        <div><label>Latest</label><span ui:field="latestUsage"/></div>
+        <div><label>Month Avg</label><span ui:field="monthUsage"/></div>
+      </widget:UsagePanel>
+    </g:layer>
+    <g:layer top="18em" height="10em" left="2em" width="20em">
+      <widget:UsagePanel icon="images/console/i-usage.png">
+        <h3>Per day Costs</h3>
+        <div><label>Latest</label><span ui:field="latestCostRate"/></div>
+        <div><label>Month Avg</label><span ui:field="monthCostRate"/></div>
+      </widget:UsagePanel>
+    </g:layer>
+    <g:layer top="31em" height="10em" left="2em" width="20em">
+      <widget:UsagePanel icon="images/console/i-target.png">
+          <h3>Per person Usage</h3>
+          <div><label>Latest</label><span ui:field="latestIntensity"/></div>
+        <div><label>Month</label><span ui:field="monthIntensity"/></div>
+      </widget:UsagePanel>
+    </g:layer>
+    <g:layer top="5em" bottom="3em" left="24em" right="2em">
+      <panel:DashboardChart ui:field="dashboardChart"/>
+    </g:layer>
+  </g:LayoutPanel>
+</ui:UiBinder>

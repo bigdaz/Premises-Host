@@ -1,0 +1,43 @@
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui">
+  <ui:with field='theme' type='greensync.client.resource.GreenSyncTheme'/>
+  <ui:style>
+    .leftNavButtons {
+    }
+
+    .leftNavButtons ul {
+    }
+
+    .leftNavButtons ul li {
+      line-height: 4em;
+    }
+
+    .leftNavButtons ul li a {
+      display: block;
+      text-align: left;
+      font-size: 120%;
+      border-style: solid;
+      border-width: 1px;
+      padding-left: 1em;
+    }
+  </ui:style>
+
+  <g:HTMLPanel styleName="{style.leftNavButtons} {theme.colours.leftNav}" ui:field="viewButtons">
+    <ul>
+      <li>
+        <g:Anchor href="javascript:;" ui:field="electricityView" styleName="button selected">Electricity</g:Anchor>
+      </li>
+      <li>
+        <g:Anchor href="javascript:;" ui:field="waterView" styleName="button">Water</g:Anchor>
+      </li>
+      <li>
+        <g:Anchor href="javascript:;" ui:field="gasView" styleName="button">Gas</g:Anchor>
+      </li>
+      <li>
+        <g:Anchor href="javascript:;" ui:field="airTravelView" styleName="button">Air Travel</g:Anchor>
+      </li>
+      <li>
+        <g:Anchor href="javascript:;" ui:field="vehicleView" styleName="button">Vehicles</g:Anchor>
+      </li>
+    </ul>
+  </g:HTMLPanel>
+</ui:UiBinder>

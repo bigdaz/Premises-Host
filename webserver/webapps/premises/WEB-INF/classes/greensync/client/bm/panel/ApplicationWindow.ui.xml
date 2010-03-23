@@ -1,0 +1,22 @@
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui"
+             xmlns:panel="urn:import:greensync.client.bm.panel">
+  <ui:with field='theme' type='greensync.client.resource.GreenSyncTheme'/>
+
+  <g:DockLayoutPanel unit="EM" styleName="{theme.colours.console}">
+    <g:north size="6">
+      <panel:TopNav ui:field="topNav"/>
+    </g:north>
+    <g:north size="4.6">
+      <panel:LocatorBar ui:field="locatorBar"/>
+    </g:north>
+    <g:south size="3">
+        <panel:Footer/>
+    </g:south>
+    <g:west size="12">
+      <panel:LeftNav ui:field="leftNav"/>
+    </g:west>
+    <g:center>
+      <panel:ContentWindow ui:field="contentWindow"/>
+    </g:center>
+  </g:DockLayoutPanel>
+</ui:UiBinder>

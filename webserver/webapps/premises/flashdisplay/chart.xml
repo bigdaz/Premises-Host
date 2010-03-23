@@ -1,0 +1,24 @@
+<chart numVDivLines='20' bgColor='000000' 
+bgAlpha='0' bgBorderColor='333333' showBorder='0' 
+showAlternateHGridColor='0' useRoundEdges='1' lineColor='c3cf20'
+canvasbgColor='000000' showValues='0'  baseFontSize='8' canvasPadding='10'
+canvasBorderColor='333333' canvasBorderThickness='1'  drawAnchors='0'
+divLineColor='333333' yAxisName='kW' caption='' plotGradientColor='333333'
+paletteColors='000000'>
+	<set label='6am' value='9' />
+	<set label='7am' value='2' />
+	<set label='8am' value='5' />
+	<set label='9am' value='4' />
+	<set label='10am' value='4' />
+	<set label='11am' value='2' />
+	<set label='12pm' value='5' />
+	<set label='1pm' value='4' />
+	<set label='2pm' value='4' />
+	<set label='3pm' value='5' />
+	<set label='4pm' value='4' />
+	<set label='5pm' value='3' />
+	<set label='6pm' value='4' />
+	<set label='7pm' value='4' />
+	<set label='8pm' value='6' />
+	<set label='9pm' value='4' />
+</chart>

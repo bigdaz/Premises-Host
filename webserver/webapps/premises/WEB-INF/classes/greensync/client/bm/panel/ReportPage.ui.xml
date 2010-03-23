@@ -1,0 +1,11 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui">
+  <ui:with field='theme' type='greensync.client.resource.GreenSyncTheme'/>
+  <ui:style>
+  </ui:style>
+  <g:HTMLPanel styleName="{theme.colours.contentWindow}">
+    <div>
+      Hey - this is the report page
+    </div>
+  </g:HTMLPanel>
+</ui:UiBinder>

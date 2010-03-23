@@ -1,0 +1,11 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui"
+             xmlns:widget="urn:import:greensync.client.display.widget">
+
+  <widget:UsagePanel icon="images/display/i-usage.png">
+    <h3>Energy Use</h3>
+    <div><label>Latest:</label><span ui:field="latest"/></div>
+    <div><label>Avg for <span ui:field="period">-</span>:</label><span ui:field="average"/></div>
+  </widget:UsagePanel>
+</ui:UiBinder>
+
