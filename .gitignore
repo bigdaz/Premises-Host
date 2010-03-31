@@ -4,3 +4,4 @@
 !/webserver/logs/keep.txt
 /webserver/war/*
 /deployment/versions/*
+/bin/*
