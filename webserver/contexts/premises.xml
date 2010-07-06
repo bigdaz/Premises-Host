@@ -28,7 +28,9 @@ detected.
   <Set name="extractWAR">false</Set>
   <Set name="copyWebDir">false</Set>
   <Set name="defaultsDescriptor"><SystemProperty name="jetty.home" default="."/>/etc/webdefault.xml</Set>
+<!--
   <Set name="overrideDescriptor"><SystemProperty name="jetty.home" default="."/>/contexts/premises.d/override-web.xml</Set>
+-->
 
   <!-- virtual hosts
   <Set name="virtualHosts">
@@ -47,22 +49,6 @@ detected.
      </Get>
   </Get>
   -->
-
-  <Get name="securityHandler">
-    <Set name="loginService">
-      <New class="org.eclipse.jetty.security.HashLoginService">
-	    <Set name="name">Premises Realm</Set>
-	    <Set name="config"><SystemProperty name="jetty.home" default="."/>/etc/premises.realm.properties</Set>
-            <!-- To enable reload of realm when properties change, uncomment the following lines -->
-            <!-- changing refreshInterval (in seconds) as desired                                -->
-            <!--
-            <Set name="refreshInterval">5</Set>
-            <Call name="start"></Call>
-            -->
-      </New>
-    </Set>
-    <Set name="checkWelcomeFiles">true</Set>
-  </Get>
 
   <!-- Non standard error page mapping -->
   <!--

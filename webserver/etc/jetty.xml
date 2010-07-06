@@ -157,6 +157,7 @@
     <!-- configuration (see $(jetty.home)/contexts/test.xml for an   -->
     <!-- example).                                                   -->
     <!-- =========================================================== -->
+<!--
     <Call name="addBean">
       <Arg>
         <New class="org.eclipse.jetty.security.HashLoginService">
@@ -166,6 +167,7 @@
         </New>
       </Arg>
     </Call>
+-->
 
     <!-- =========================================================== -->
     <!-- Configure Request Log                                       -->
