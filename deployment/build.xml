@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <project name="premises.deployment" default="deploy" basedir=".">
 
+  <fail unless="warfile" message="Please supply the name of the war file using -Dwarfile="/>
   <property name="jetty.home" value="../webserver"/>
-  <property name="archive.location" value="./"/>
-  <property name="archive.name" value="premises.war"/>
+  <property name="archive.location" value="."/>
+  <property name="archive.name" value="${warfile}"/>
   <property name="archive.file" value="${archive.location}/${archive.name}"/>
   <property name="version.store" value="versions"/>
   <tstamp>
-      <format property="timestamp.now" pattern="d-MMMM-yyyy-HH:mm:ss"/>
+      <format property="timestamp.now" pattern="yyyy-MM-ddTHH:mm:ss"/>
   </tstamp>
 	
   <available file="${archive.file}" property="archive.file.present"/>
@@ -19,7 +20,6 @@
   <target name="deploy" depends="archive-check">
     <!-- Must extract the war. A bug in DataNucleus prevents us from using a .war file with jetty. Fixed in DataNucleus 2.0 -->
     <!--<copy file=".build/premises.war" tofile="${jetty.home}/webapps/premises.war"/>-->
-    <delete dir="${jetty.home}/war/db"/>
     <delete dir="${jetty.home}/webapps/premises"/>
     <copy file="${archive.file}" tofile="${version.store}/${timestamp.now}/${archive.name}"/>
     <unzip src="${archive.file}" dest="${jetty.home}/webapps/premises"/>
