@@ -3,5 +3,6 @@
 /webserver/logs/*
 !/webserver/logs/keep.txt
 /webserver/war/*
+/webserver/db/*
 /deployment/versions/*
 /bin/*
