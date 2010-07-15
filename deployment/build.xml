@@ -8,7 +8,7 @@
   <property name="archive.file" value="${archive.location}/${archive.name}"/>
   <property name="version.store" value="versions"/>
   <tstamp>
-      <format property="timestamp.now" pattern="yyyy-MM-ddTHH:mm:ss"/>
+      <format property="timestamp.now" pattern="yyyyMMdd-HH:mm:ss"/>
   </tstamp>
 	
   <available file="${archive.file}" property="archive.file.present"/>
