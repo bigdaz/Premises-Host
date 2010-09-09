@@ -2,7 +2,6 @@
 !/webserver/webapps/keep.txt
 /webserver/logs/*
 !/webserver/logs/keep.txt
-/webserver/war/*
-/webserver/db/*
+/webserver/work/*
+/webserver/temp/*
 /deployment/versions/*
-/bin/*
