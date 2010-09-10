@@ -5,3 +5,4 @@
 /webserver/work/*
 /webserver/temp/*
 /deployment/versions/*
+/deployment/*.zip

@@ -1,35 +1,37 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<project name="premises.deployment" default="deploy" basedir=".">
+<project name="premises.deployment" default="upgrade" basedir=".">
 
-  <fail unless="warfile" message="Please supply the name of the war file using -Dwarfile="/>
-  <property name="jetty.home" value="../webserver"/>
-  <property name="archive.location" value="."/>
-  <property name="archive.name" value="${warfile}"/>
-  <property name="archive.file" value="${archive.location}/${archive.name}"/>
-  <property name="version.store" value="versions"/>
-  <tstamp>
-      <format property="timestamp.now" pattern="yyyyMMdd-HH:mm:ss"/>
-  </tstamp>
-	
-  <available file="${archive.file}" property="archive.file.present"/>
-	
-  <target name="archive-check">
-    <fail unless="archive.file.present" message="Can't find archive in directory ${archive.file}"/>
-  </target>
+    <property name="catalina.home" value="../webserver"/>
 
-  <target name="deploy" depends="archive-check">
-    <!-- Must extract the war. A bug in DataNucleus prevents us from using a .war file with jetty. Fixed in DataNucleus 2.0 -->
-    <!--<copy file=".build/premises.war" tofile="${jetty.home}/webapps/premises.war"/>-->
-    <delete dir="${jetty.home}/webapps/premises"/>
-    <copy file="${archive.file}" tofile="${version.store}/${timestamp.now}/${archive.name}"/>
-    <unzip src="${archive.file}" dest="${jetty.home}/webapps/premises"/>
-    <delete file="${archive.file}"/>
-  </target>
+    <target name="upgrade" depends="tomcat-stop, extract, update-database, deploy, tomcat-start"/>
 
-  <target name="jetty-start">
-    <java dir="${jetty.home}" jar="${jetty.home}/start.jar" fork="true">
-      <arg value="etc/jetty.xml"/>
-    </java>
-  </target>
+    <target name="check-version">
+        <fail unless="version" message="Please supply the premises version using -Dversion="/>
+        <property name="dist.name" value="premises-highrise-${version}"/>
+        <property name="dist.zip" location="${dist.name}.zip"/>
+    </target>
 
+    <target name="tomcat-stop">
+        <exec executable="${catalina.home}/bin/shutdown.sh"/>
+    </target>
+
+    <target name="extract" depends="check-version">
+        <unzip src="${dist.zip}" dest="versions"/>
+    </target>
+
+    <target name="update-database" depends="check-version">
+        <property file="liquibase.properties"/>
+        <ant dir="versions/${dist.name}/db-migration"/>
+    </target>
+
+    <target name="deploy" depends="check-version">
+        <delete dir="${catalina.home}/webapps/ROOT"/>
+        <copy todir="${catalina.home}/webapps/ROOT">
+            <fileset dir="versions/${dist.name}/war"/>
+        </copy>
+    </target>
+
+    <target name="tomcat-start">
+        <exec executable="${catalina.home}/bin/startup.sh"/>
+    </target>
 </project>
