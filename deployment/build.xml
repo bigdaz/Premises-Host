@@ -34,4 +34,16 @@
     <target name="tomcat-start">
         <exec executable="${catalina.home}/bin/startup.sh"/>
     </target>
+
+    <target name="clean">
+        <delete>
+            <fileset dir="." includes="premises-highrise-*.zip"/>
+        </delete>
+    </target>
+
+    <target name="clean-versions">
+        <delete includeemptydirs="true">
+            <fileset dir="versions" includes="premises-highrise-*/**"/>
+        </delete>
+    </target>
 </project>
