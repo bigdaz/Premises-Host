@@ -1,13 +1,14 @@
 #!/bin/sh
 
-if test -z "$3"
+if test -z "$1"
 then
-  echo "USAGE: get-premises.sh {VERSION} {USER} {PASSWORD}"
+  echo "USAGE: get-premises.sh {VERSION}"
   exit
 else
   VERSION=$1
-  USER=$2
-  PASSWORD=$3
 fi
+
+USER=root
+PASSWORD=root
 
 curl --insecure --user $USER:$PASSWORD --output premises-highrise-${VERSION}.zip https://repository.majitek.com/nexus/content/repositories/premises.releases/au/com/greensync/premises-highrise/${VERSION}/premises-highrise-${VERSION}.zip 
