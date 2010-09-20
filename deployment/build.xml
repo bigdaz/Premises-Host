@@ -21,7 +21,7 @@
 
     <target name="dump-database" description="Run mysqldump to make a database backup">
         <property file="liquibase.properties"/>
-        <exec executable="/usr/local/mysql/bin/mysqldump" output="database-backup.sql">
+        <exec executable="mysqldump" output="database-backup.sql">
             <arg value="--protocol=tcp"/>
             <arg value="--user=${username}" />
             <arg value="--password=${password}" />
