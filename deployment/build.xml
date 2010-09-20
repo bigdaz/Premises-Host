@@ -19,7 +19,17 @@
         <unzip src="${dist.zip}" dest="versions"/>
     </target>
 
-    <target name="update-database" depends="check-version">
+    <target name="dump-database" description="Run mysqldump to make a database backup">
+        <property file="liquibase.properties"/>
+        <exec executable="/usr/local/mysql/bin/mysqldump" output="database-backup.sql">
+            <arg value="--protocol=tcp"/>
+            <arg value="--user=${username}" />
+            <arg value="--password=${password}" />
+            <arg value="premises_highrise" />
+        </exec>
+    </target>
+
+    <target name="update-database" depends="check-version, dump-database">
         <property file="liquibase.properties"/>
         <ant dir="versions/${dist.name}/db-migration"/>
     </target>
@@ -37,7 +47,10 @@
 
     <target name="clean">
         <delete>
-            <fileset dir="." includes="premises-highrise-*.zip"/>
+            <fileset dir="." includes="premises-highrise-*.zip">
+                <include name="premises-highrise-*.zip"/>
+                <include name="database-backup.sql"/>
+            </fileset>
         </delete>
     </target>
 

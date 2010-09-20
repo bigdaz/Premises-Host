@@ -6,3 +6,4 @@
 /webserver/temp/*
 /deployment/versions/*
 /deployment/*.zip
+/deployment/*.sql
