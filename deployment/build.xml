@@ -3,7 +3,7 @@
 
     <property name="catalina.home" value="../webserver"/>
 
-    <target name="upgrade" depends="tomcat-stop, extract, update-database, deploy, tomcat-start"/>
+    <target name="upgrade" depends="check-version, tomcat-stop, extract, update-database, deploy, tomcat-start"/>
 
     <target name="check-version">
         <fail unless="version" message="Please supply the premises version using -Dversion="/>
