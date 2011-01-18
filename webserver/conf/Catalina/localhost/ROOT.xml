@@ -29,7 +29,7 @@
               type="javax.sql.DataSource"
               auth="Container"
               driverClassName="com.mysql.jdbc.Driver"
-              url="jdbc:mysql://mysql/premises_highrise"
+              url="jdbc:mysql://127.0.0.1/premises_highrise"
               username="root"
               password="root"
               maxActive="100"
