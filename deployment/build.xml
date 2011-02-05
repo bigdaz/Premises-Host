@@ -42,10 +42,7 @@
     </target>
 
     <target name="tomcat-start">
-        <exec executable="nohup">
-            <arg line="${catalina.home}/bin/startup.sh"/>
-        </exec>
-
+        <exec executable="./start-tomcat-nohup.sh"/>
     </target>
 
     <target name="clean">
